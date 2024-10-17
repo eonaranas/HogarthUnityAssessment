@@ -92,6 +92,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7124800602180898652}
+  - component: {fileID: 4631645366217877375}
   m_Layer: 0
   m_Name: FighterDummy
   m_TagString: Untagged
@@ -115,6 +116,18 @@ Transform:
   - {fileID: 329108976252946585}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4631645366217877375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3809310848835653623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa61ece31996ae644a77676db047b1e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4730687999180889843
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,7 +160,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.52, z: 6.09}
-  m_LocalScale: {x: 10, y: 3, z: 10}
+  m_LocalScale: {x: 5, y: 3, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 329108976252946585}
@@ -452,6 +465,8 @@ MonoBehaviour:
   _weaponObject: {fileID: 8321185432014838777}
   _lineOfSight: {fileID: 7275991137745083320}
   _turret: {fileID: 160018663742662521}
+  _commandCenter: {fileID: 4631645366217877375}
+  _aiData: {fileID: 11400000, guid: 019f5460488789c4b8fc6cfe5039d128, type: 2}
 --- !u!1001 &2387590694530238386
 PrefabInstance:
   m_ObjectHideFlags: 0

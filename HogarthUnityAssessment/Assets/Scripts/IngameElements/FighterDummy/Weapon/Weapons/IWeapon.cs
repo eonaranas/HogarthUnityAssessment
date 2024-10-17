@@ -10,6 +10,7 @@ namespace HogarthAssessmentTest {
 		float Range { get; set; }
 		ObjectPoolLibraryCommon.PoolType PoolType { get; set; }
 		void Attack(Transform turret);
+		void StopAttack();
 		void InitializeStats(WeaponData weaponData);
 	}
 }

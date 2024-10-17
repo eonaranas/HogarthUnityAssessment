@@ -4,29 +4,28 @@ using UnityEngine;
 using UnityEngine.AI;
 
 namespace HogarthAssessmentTest {
-	public class Search : IWalkable {
+	public class Search : Command, IWalkable {
 		private NavMeshAgent _agent;
 		float _walkingDistance;
 
 		#region IWalkableImplementation
 
-		public void Initialize(NavMeshAgent agent = null, float walkRadius = 0f, NavMeshAgent target = null) {
+		public Search(NavMeshAgent agent = null, float walkRadius = 0f, NavMeshAgent target = null) {
 			_agent = agent;
 			_walkingDistance = walkRadius;
-			agent.transform.GetComponent<MonoBehaviour>().StartCoroutine(Walk());
+			_agent.isStopped = false;
 		}
 		public IEnumerator Walk() {
-			GoToRandomPosition();
-			do {
-				if (_agent.remainingDistance <= 0) {
-					GoToRandomPosition();
-				} else {
-					yield return 0;
-				}
-				yield return 0;
-			} while (_agent != null);
+			_agent.destination = Random.insideUnitSphere * _walkingDistance;
+			yield return 0;
+		}
+		#endregion
 
-			void GoToRandomPosition() => _agent.destination = Random.insideUnitSphere * _walkingDistance;
+		#region Command implementation
+		public override bool IsFinished { get => _agent.remainingDistance <= 0.5f; }
+
+		public override void Execute() {
+			_agent.transform.GetComponent<MonoBehaviour>().StartCoroutine(Walk());
 		}
 		#endregion
 	}

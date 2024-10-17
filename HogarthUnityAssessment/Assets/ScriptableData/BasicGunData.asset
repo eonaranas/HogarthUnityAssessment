@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8a7b7d7784df3f4f95299289d57fc2c, type: 3}
   m_Name: BasicGunData
   m_EditorClassIdentifier: 
-  attackSpeed: 10
-  damage: 1
+  attackSpeed: 1
   range: 5
+  poolType: 0
