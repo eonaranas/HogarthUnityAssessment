@@ -9,8 +9,8 @@ namespace HogarthAssessmentTest {
 		[SerializeField]
 		private NavMeshAgent _agent;
 		IWalkable _walkableBehaviour = new Search();
-
-		IWeapon _weapon = new Gun();
+		[SerializeField]
+		private WeaponObject _weaponObject;
 		[SerializeField]
 		private LineOfSight _lineOfSight;
 
@@ -25,10 +25,10 @@ namespace HogarthAssessmentTest {
 
 		#region LineOfSight Listener
 		void OnEneymyOnSight(NavMeshAgent targetAgent) {
-			_walkableBehaviour = new StopWalking();
-			_walkableBehaviour.Initialize(_agent);
+			_walkableBehaviour = new FaceTarget();
+			_walkableBehaviour.Initialize(agent:_agent, target:targetAgent);
 
-			_weapon.Attack(_turret, targetAgent);
+			_weaponObject.Weapon.Attack(_turret);
 		}
 		#endregion
 

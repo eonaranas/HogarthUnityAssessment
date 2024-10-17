@@ -13,7 +13,7 @@ namespace HogarthAssessmentTest {
 		public void Initialize(NavMeshAgent agent = null, float walkRadius = 0f, NavMeshAgent target = null) {
 			_agent = agent;
 			_walkingDistance = walkRadius;
-			agent.transform.parent.GetComponent<MonoBehaviour>().StartCoroutine(Walk());
+			agent.transform.GetComponent<MonoBehaviour>().StartCoroutine(Walk());
 		}
 		public IEnumerator Walk() {
 			GoToRandomPosition();
