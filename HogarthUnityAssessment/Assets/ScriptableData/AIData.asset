@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9782a79e1ea6de449b1189c8dab5a7f1, type: 3}
   m_Name: AIData
   m_EditorClassIdentifier: 
-  minSpeedThinking: 0
-  maxSpeedThinking: 3
+  minSpeedThinking: 3
+  maxSpeedThinking: 5
   HP: 3

@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BasicGunData
   m_EditorClassIdentifier: 
   attackSpeed: 1
-  range: 5
+  range: 50
   poolType: 0

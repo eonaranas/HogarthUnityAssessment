@@ -1,6 +1,5 @@
+using SimpleEventBus_eon;
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -37,6 +36,7 @@ namespace HogarthAssessmentTest {
 			_commandCenter.StopOperation();
 			_currentTarget = null;
 			StopCoroutine(AILoop());
+			SimpleEventBus.TriggerEvent(SimpleEventBusEnum.GAME_EVENTS.ON_PLAYER_DIED, this);
 			gameObject.transform.parent.gameObject.SetActive(false);
 		}
 		#endregion

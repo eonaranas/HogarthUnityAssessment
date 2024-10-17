@@ -1,7 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 using AaronTools;
 using HogarthAssessmentTest;
 using UnityEngine.UIElements;
@@ -24,7 +22,7 @@ public class BasicGun : IWeapon {
 		bullet.transform.position = turret.position;
 		bullet.transform.forward = turret.forward;
 		bullet.OnBulletHit += ReturnBulletToPool;
-		bullet.MoveToTarget(ReturnBulletToPool);
+		bullet.MoveToTarget(Range, ReturnBulletToPool);
 		void ReturnBulletToPool() {
 			bullet.OnBulletHit -= ReturnBulletToPool;
 			ObjectPoolLibraryCommon.instance.GetObjectPooler(PoolType).ReturnObject(bullet.gameObject);

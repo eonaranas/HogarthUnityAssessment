@@ -1,9 +1,7 @@
 using HogarthAssessmentTest;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using AaronTools;
 public class BulletObject : MonoBehaviour {
 
 	public Action OnBulletHit;
@@ -26,15 +24,14 @@ public class BulletObject : MonoBehaviour {
 	}
 	#endregion
 
-	public void MoveToTarget(Action onDone = null) {
-		StartCoroutine(Move(onDone));
+	public void MoveToTarget(float range, Action onDone = null) {
+		StartCoroutine(Move(range, onDone));
 	}
 
-	IEnumerator Move(Action onDone = null) {
+	IEnumerator Move(float range, Action onDone = null) {
 		Debug.Log(gameObject.name + " Speed: " + _bullet.BulletSpeed);
-		float currentTimer = 0f;
-		while (currentTimer < _bullet.BulletLifeSpan) {
-			currentTimer += Time.deltaTime;
+		Vector3 startingPos = transform.position;
+		while (Vector3.Distance(startingPos, transform.position) < range) {
 			yield return 0;
 			transform.position += transform.forward * _bullet.BulletSpeed * Time.deltaTime;
 		}

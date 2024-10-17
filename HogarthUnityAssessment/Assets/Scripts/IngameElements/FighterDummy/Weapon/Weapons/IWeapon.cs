@@ -1,8 +1,5 @@
 using AaronTools;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace HogarthAssessmentTest {
 	public interface IWeapon {
